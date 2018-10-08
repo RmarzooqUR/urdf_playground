@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+<robot name="auv">
+
+    <link name="base_link">
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <mass value="0.0"/>
+            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+        </inertial>
+        <visual name="baseLink_visual">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <mesh filename="package://models/meshes/SEA_VEHICLE.dae"/>
+            </geometry>
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <mesh filename="package://models/meshes/SEA_VEHICLE.dae"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <link name="right_thruster">
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <mass value="0.0"/>
+            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+        </inertial>
+        <visual name="rightThruster_visual">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 1.5707"/>
+            <geometry>
+                <mesh filename="package://models/meshes/thruster.dae" scale="0.01 0.01 0.01"/>
+            </geometry>
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 1.5707"/>
+            <geometry>
+                <mesh filename="package://models/meshes/thruster.dae" scale="0.01 0.01 0.01"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <link name="left_thruster">
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <mass value="0.0"/>
+            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+        </inertial>
+        <visual name="leftThruster_visual">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 1.5707"/>
+            <geometry>
+                <mesh filename="package://models/meshes/thruster.dae" scale="0.01 0.01 0.01" />
+            </geometry>
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 1.5707"/>
+            <geometry>
+                <mesh filename="package://models/meshes/thruster.dae" scale="0.01 0.01 0.01"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <link name="front_thruster">
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <mass value="0.0"/>
+            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+        </inertial>
+        <visual name="frontThruster">
+            <origin xyz="0.0 0.0 0.0" rpy="1.5707 0.0 0.0"/>
+            <geometry>
+                <mesh filename="package://models/meshes/thruster.dae" scale="0.01 0.01 0.01"/>
+            </geometry>
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="1.5707 0.0 0.0"/>
+            <geometry>
+                <mesh filename="package://models/meshes/thruster.dae" scale="0.01 0.01 0.01"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <link name="back_thruster">
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <mass value="0.0"/>
+            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+        </inertial>
+        <visual name="backThruster">
+            <origin xyz="0.0 0.0 0.0" rpy="1.5707 0.0 0.0"/>
+            <geometry>
+                <mesh filename="package://models/meshes/thruster.dae" scale="0.01 0.01 0.01"/>
+            </geometry>
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="1.5707 0.0 0.0"/>
+            <geometry>
+                <mesh filename="package://models/meshes/thruster.dae" scale="0.01 0.01 0.01"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <joint name="leftThruster_baseLink" type="fixed">
+        <origin xyz="0.0 -0.18 0.0" rpy="0.0 0.0 0.0"/>
+        <parent link="base_link"/>
+        <child link="right_thruster"/>
+        <axis xyz="0.0 0.0 0.0"/>
+        <limit lower="0.0" upper="0.0" effort="0.0" velocity="0.0"/>
+    </joint>
+    <joint name="rightThruster_baseLink" type="fixed">
+        <origin xyz="0.0 0.18 0.0" rpy="0.0 0.0 0.0"/>
+        <parent link="base_link"/>
+        <child link="left_thruster"/>
+        <axis xyz="0.0 0.0 0.0"/>
+        <limit lower="0.0" upper="0.0" effort="0.0" velocity="0.0"/>
+    </joint>
+    <joint name="frontThruster_baseLink" type="fixed">
+        <origin xyz="0.35 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <parent link="base_link"/>
+        <child link="front_thruster"/>
+        <axis xyz="0.0 0.0 0.0"/>
+        <limit lower="0.0" upper="0.0" effort="0.0" velocity="0.0"/>
+    </joint>
+    <joint name="backThruster_baseLink" type="fixed">
+        <origin xyz="-0.35 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <parent link="base_link"/>
+        <child link="back_thruster"/>
+        <axis xyz="0.0 0.0 0.0"/>
+        <limit lower="0.0" upper="0.0" effort="0.0" velocity="0.0"/>
+    </joint>
+</robot>
