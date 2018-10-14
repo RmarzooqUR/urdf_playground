@@ -1,10 +1,10 @@
 <launch>
 
-  <arg name="model" />
+  <arg name="model" default="$(find models)/urdf/auv_model.xacro" />
   <arg name="gui" default="true" />
   <arg name="rvizconfig" default="$(find urdf_tutorial)/rviz/urdf.rviz" />
 
-  <param name="robot_description" command="$(find xacro)/xacro.py --inorder $(arg model)" />
+  <param name="robot_description" command="$(find xacro)/xacro --inorder $(arg model)" />
   <param name="use_gui" value="$(arg gui)"/>
 
   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />

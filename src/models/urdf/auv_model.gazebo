@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<robot name="">
+    <gazebo>
+        <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+            <robotNamespace>/auv</robotNamespace>
+            <!-- <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType> -->
+        </plugin>
+    </gazebo>
+
+    <!-- base_link -->
+    <gazebo reference="base_link"></gazebo>
+
+    <!-- right_thruster  -->
+    <gazebo reference="right_thruster"></gazebo>
+
+    <!-- left_thruster -->
+    <gazebo reference="left_thruster"></gazebo>
+
+    <!-- front_thruster -->
+    <gazebo reference="front_thruster"></gazebo>
+
+    <!-- back_thruster -->
+    <gazebo reference="back_thruster"></gazebo>
+</robot>
