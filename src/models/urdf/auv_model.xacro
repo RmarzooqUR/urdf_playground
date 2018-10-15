@@ -123,7 +123,7 @@
         </collision>
     </link>
 
-    <link name="frontCam_optical">
+    <link name="camera_front_optical">
     </link>
 
     <joint name="leftThruster_baseLink" type="fixed">
@@ -164,7 +164,7 @@
     <joint name="frontCamera_opticalJoint" type="fixed">
         <origin xyz="0.0 0.0 0.0" rpy="-1.5707 0 -1.5707"/>
         <parent link="camera_front"/>
-        <child link="frontCam_optical"/>
+        <child link="camera_front_optical"/>
         <axis xyz="0.0 0.0 0.0"/>
         <limit lower="0.0" upper="0.0" effort="0.0" velocity="0.0"/>
     </joint>
