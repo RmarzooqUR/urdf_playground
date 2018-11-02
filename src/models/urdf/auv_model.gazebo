@@ -11,16 +11,24 @@
     <gazebo reference="base_link"></gazebo>
 
     <!-- right_thruster  -->
-    <gazebo reference="right_thruster"></gazebo>
+    <gazebo reference="right_thruster">
+        <plugin name="" filename=""></plugin>
+    </gazebo>
 
     <!-- left_thruster -->
-    <gazebo reference="left_thruster"></gazebo>
+    <gazebo reference="left_thruster">
+        <plugin name="" filename=""></plugin>
+    </gazebo>
 
     <!-- front_thruster -->
-    <gazebo reference="front_thruster"></gazebo>
+    <gazebo reference="front_thruster">
+        <plugin name="" filename=""></plugin>
+    </gazebo>
 
     <!-- back_thruster -->
-    <gazebo reference="back_thruster"></gazebo>
+    <gazebo reference="back_thruster">
+        <plugin name="" filename=""></plugin>
+    </gazebo>
 
     <!-- front_camera -->
     <gazebo reference="camera_front">
