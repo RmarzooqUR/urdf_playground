@@ -100,6 +100,16 @@
             </geometry>
         </collision>
     </link>
+<<<<<<< HEAD
+    <link>
+  		<sensor name="imu_sensor" type="imu">
+	    	<pose>0 0 0 0 0 0</pose>
+	    	<always_on>1</always_on>
+	    	<update_rate>1000.0</update_rate>
+  		</sensor>
+	</link>
+=======
+>>>>>>> 6df93dd37ae20203b9764f8cb4ff4d51d771fc73
 
     <joint name="leftThruster_baseLink" type="fixed">
         <origin xyz="0.0 -0.18 0.0" rpy="0.0 0.0 0.0"/>
